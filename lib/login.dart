@@ -1,5 +1,7 @@
 import 'package:e_library/Screens/home.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class Loginscreen
  extends StatelessWidget {
@@ -9,6 +11,7 @@ class Loginscreen
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 27, 79, 170),
       body: Center(
         child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -16,17 +19,24 @@ class Loginscreen
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('EMAIL/MOBILE NO'),
+                Text('REG NO/STAFF ID',
+                    style: GoogleFonts.poppins(),),
 
                 SizedBox(height: 5,),
 
 
-                SizedBox(
-                  height: 30,
-                  width: 250,
+                Container(
+                  padding: EdgeInsets.all(5),
+                  height: 40,
+                  width: 300,
+                  decoration: BoxDecoration(
+                   color: Colors.white,
+                    borderRadius: BorderRadius.circular(10)
+                  ),
                   child: TextFormField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder()
+                      border: InputBorder.none
+                      
                     ),
                   ),
                 ),
@@ -39,12 +49,17 @@ class Loginscreen
                 SizedBox(height: 5,),
 
 
-                SizedBox(
-                  height: 30,
-                  width: 250,
+                Container(
+                  padding: EdgeInsets.all(5),
+                  height: 40,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10)
+                  ),
                   child: TextFormField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder()
+                      border: InputBorder.none
                     ),
                   ),
                 ),
@@ -52,7 +67,7 @@ class Loginscreen
             ),
 
 
-            SizedBox(height: 25,),
+            SizedBox(height: 50),
             
 
             InkWell(
@@ -61,8 +76,8 @@ class Loginscreen
               },
               child:Container(
               alignment: Alignment.center,
-              height: 30,
-              width: 60,
+              height: 35,
+              width: 75,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.cyan
