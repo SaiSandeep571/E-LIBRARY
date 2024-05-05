@@ -1,5 +1,7 @@
 import 'package:e_library/Screens/home.dart';
+import 'package:e_library/bottom.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -19,8 +21,11 @@ class Loginscreen
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('REG NO/STAFF ID',
-                    style: GoogleFonts.poppins(),),
+                Text('REG NO/STAFF ID :',
+                    style: GoogleFonts.poppins(
+                      fontWeight:FontWeight.w500,
+                      fontSize:15,                   
+                    ),),
 
                 SizedBox(height: 5,),
 
@@ -41,10 +46,14 @@ class Loginscreen
                   ),
                 ),
 
-                SizedBox(height: 10,),
+                SizedBox(height: 25,),
 
 
-                Text('PASSWORD'),
+                Text('PASSWORD :',
+                    style: GoogleFonts.poppins(
+                      fontWeight:FontWeight.w500,
+                      fontSize:15,                     
+                    ),),
 
                 SizedBox(height: 5,),
 
@@ -72,7 +81,7 @@ class Loginscreen
 
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => home()),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Bottom()),);
               },
               child:Container(
               alignment: Alignment.center,
@@ -80,9 +89,13 @@ class Loginscreen
               width: 75,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.cyan
+                color: Colors.grey
               ),
-              child: Text('LOGIN'),
+              child: Text('LOGIN',
+              style: GoogleFonts.poppins(
+                fontWeight:FontWeight.w700
+              ),
+              ),
             ),)
             
           ],
