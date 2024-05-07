@@ -1,37 +1,78 @@
+import 'package:e_library/Screens/department.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black,
+        
         appBar: AppBar(
+          backgroundColor: Colors.black,
+          foregroundColor: Colors.white,
           leading: Icon(Icons.menu_outlined),
           actions: [Icon(Icons.notifications)],
         ),
 
         body: 
-        Column(
-          children: [
-            Text('My Books',
-            style: GoogleFonts.poppins(
-              fontWeight:FontWeight.w500,
-              fontSize:20
-            ),
-            ),
-            Container(
-              margin: EdgeInsets.all(15),
-              child: Column(
+        Container(
+          margin: EdgeInsets.all(15),
+          child: Column(
+            children: [
+          
+              InkWell(
+                 onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Department()),);
+              },
+
+
+                child: Container(
+                  alignment: Alignment.center,
+                  margin: EdgeInsets.all(5),
+                  height: 40,
+                  width: 400,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8)
+                  ),
+                  child: Text('EXPLORE BOOKS',
+                  style: GoogleFonts.poppins(
+                                  fontWeight:FontWeight.w600,
+                                  fontSize:24,                   
+                                ),
+                  ),
+                ),
+              ),
+          
+              Divider(
+                color: Colors.white,
+                thickness: 2,
+                ),
+          
+          
+              Text('My Books',
+              style: GoogleFonts.poppins(
+                fontWeight:FontWeight.w500,
+                fontSize:20,
+                color: Colors.white,
+              ),
+              ),
+              
+              SizedBox(height: 10),
+
+
+              Column(
                 children: [
-                 _detailbox('assets/leo.png','C PROGRAMMING','SURESH','10/01/2003','17/01/2003'),
-                 _detailbox('','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
+                 _detailbox('assets/shab.png','FLUTTER','SAB','10/01/2003','17/01/2003'),
+                 _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -48,13 +89,14 @@ class Home extends StatelessWidget {
             height: 100,
             width: 400,
             decoration: BoxDecoration(
-              color: Colors.grey,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(8)
             ),
             child: Row(
               children: [
 
-                 SizedBox(
+                 Container(
+                  decoration: BoxDecoration(border: Border.all(),borderRadius: BorderRadius.circular(8)),
                   height: 80,
                   width: 80,
                   child: ClipRRect(
