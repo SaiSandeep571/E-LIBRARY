@@ -46,8 +46,8 @@ class Book extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                         _bookdetails('assets/leo.png','EGANA THINNAM','CHRISTY LEO'),
-                         _bookdetails('assets/leo.png','EGANA THINNAM','CHRISTY LEO'),
+                         _bookdetail(context,'assets/leo.png','EGANA THINNAM','CHRISTY LEO','YES'),
+                         _bookdetail(context,'assets/leo.png','EGANA THINNAM','CHRISTY LEO','YES'),
                         ],
                       ),
                       
@@ -71,60 +71,236 @@ class Book extends StatelessWidget {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-_bookdetails( String image,text1,text2) {
-    return Container(
-            margin: EdgeInsets.all(5),
-            padding: EdgeInsets.all(10),
-            height: 225,
-            width: 165,
+ _bookdetail(BuildContext context,String image,text1,text2,text3) {
+  return InkWell(
+    onTap: () {
+              _dialogbox(context, image, text1, text2, text3);
+              },
+    child: Container(
+      margin: EdgeInsets.all(8),
+      padding: EdgeInsets.all(10),
+      height: 225,
+      width: 165,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Column(
+        children: [
+          Container(
             decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8)
+              border: Border.all(),
+              borderRadius: BorderRadius.circular(8),
             ),
-            child: Column(
-              children: [
-
-                 Container(
-                  decoration: BoxDecoration(border: Border.all(),borderRadius: BorderRadius.circular(8)),
-                  height: 100,
-                  width: 80,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8) ,
-                    child: Image.asset(image,fit: BoxFit.fill,)),
-                 ),
-
-                 SizedBox(height: 10),
-                
-                Row(
-                  children: [
-                    Text('BOOKNAME:',
-                    style: GoogleFonts.poppins(
-                              fontWeight:FontWeight.w600,
-                              fontSize:10,                   
-                            ),),
-                    Text(text1,
-                    style: GoogleFonts.poppins(
-                              fontWeight:FontWeight.w500,
-                              fontSize:10,                   
-                            ),)
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text('AUTHOR:',
-                    style: GoogleFonts.poppins(
-                              fontWeight:FontWeight.w600,
-                              fontSize:10,                   
-                            ),),
-                    Text(text2,
-                    style: GoogleFonts.poppins(
-                              fontWeight:FontWeight.w500,
-                              fontSize:10,                   
-                            ),)
-                  ],
-                ),
- 
-              ],
+            height: 100,
+            width: 80,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(image, fit: BoxFit.fill),
             ),
-           );
-  }
+          ),
+          SizedBox(height: 10),
+          Row(
+            children: [
+              Text(
+                'BOOKNAME:',
+                style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  text1,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 11,
+                  ),
+                ),
+              )
+            ],
+          ),
+          Row(
+            children: [
+              Text(
+                'AUTHOR:',
+                style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  text2,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 11,
+                  ),
+                ),
+              )
+            ],
+          ),
+
+          Row(
+            children: [
+              Text(
+                'BOOK AVAILABILITY:',
+                style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
+              Text(
+                text3,
+                style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 11,
+                  color: Colors.green,
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+_dialogbox( BuildContext context,String image,text1,text2,text3) {
+  return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Book Details',
+                  style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20,
+                  color: Colors.black,
+                ),),
+            content: Container(
+              height: 250,
+              width: 250,
+              child: Column(
+                //mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    height: 100,
+                    width: 80,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.asset(image, fit: BoxFit.fill),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Text(
+                        'BOOKNAME:',
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 12,
+                        ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          text1,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 11,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+
+                  Row(
+                    children: [
+                      Text(
+                        'AUTHOR:',
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 12,
+                        ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          text2,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 11,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+
+                  Row(
+                    children: [
+                      Text(
+                        'BOOK AVAILABILITY:',
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 12,
+                        ),
+                      ),
+                      Text(
+                        text3,
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 11,
+                          color: Colors.green,
+                        ),
+                      )
+                    ],
+                  ),
+
+
+                ],
+              ),
+            ),
+            actionsAlignment:MainAxisAlignment.center,
+            actions: [
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 30,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  child:Text(
+                      'CLOSE',
+                        style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        color: Colors.white,
+                      ),
+                    ),
+                ),
+              ),
+            ],
+          );
+        },
+      );
+    }

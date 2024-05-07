@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class Home extends StatelessWidget {
                 child: Container(
                   alignment: Alignment.center,
                   margin: EdgeInsets.all(5),
-                  height: 40,
+                  height: 50,
                   width: 400,
                   decoration: BoxDecoration(
                     color: Colors.white,
