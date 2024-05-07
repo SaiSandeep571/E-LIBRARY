@@ -89,7 +89,6 @@ class Book extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              border: Border.all(),
               borderRadius: BorderRadius.circular(8),
             ),
             height: 100,
@@ -189,16 +188,14 @@ _dialogbox( BuildContext context,String image,text1,text2,text3) {
               height: 250,
               width: 250,
               child: Column(
-                //mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      border: Border.all(),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    height: 100,
-                    width: 80,
+                    height: 120,
+                    width: 100,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.asset(image, fit: BoxFit.fill),
