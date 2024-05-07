@@ -1,7 +1,5 @@
 import 'package:e_library/Screens/home.dart';
-import 'package:e_library/bottom.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -13,7 +11,7 @@ class Loginscreen
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 27, 79, 170),
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +33,7 @@ class Loginscreen
                   height: 40,
                   width: 300,
                   decoration: BoxDecoration(
-                   color: Colors.white,
+                   color: Colors.grey,
                     borderRadius: BorderRadius.circular(10)
                   ),
                   child: TextFormField(
@@ -63,7 +61,7 @@ class Loginscreen
                   height: 40,
                   width: 300,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.grey,
                     borderRadius: BorderRadius.circular(10)
                   ),
                   child: TextFormField(
@@ -81,7 +79,7 @@ class Loginscreen
 
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Bottom()),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Home()),);
               },
               child:Container(
               alignment: Alignment.center,
