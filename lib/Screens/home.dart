@@ -1,5 +1,7 @@
 import 'package:e_library/Screens/department.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatelessWidget {
@@ -65,11 +67,23 @@ class Home extends StatelessWidget {
               SizedBox(height: 10),
 
 
-              Column(
-                children: [
-                 _detailbox('assets/shab.png','FLUTTER','SAB','10/01/2003','17/01/2003'),
-                 _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
-                ],
+              Expanded(
+                child: ListView(
+                  children: [
+                    Column(
+                      children: [
+                       _detailbox('assets/shab.png','FLUTTER','SAB','10/01/2003','17/01/2003'),
+                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
+                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
+                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
+                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
+                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
+                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
+                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -86,7 +100,7 @@ class Home extends StatelessWidget {
     return Container(
             margin: EdgeInsets.all(5),
             padding: EdgeInsets.all(10),
-            height: 100,
+            height: 125,
             width: 400,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -96,9 +110,10 @@ class Home extends StatelessWidget {
               children: [
 
                  Container(
-                  decoration: BoxDecoration(border: Border.all(),borderRadius: BorderRadius.circular(8)),
-                  height: 80,
-                  width: 80,
+                  decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8)),
+                  height: 100,
+                  width: 90,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8) ,
                     child: Image.asset(image,fit: BoxFit.fill,)),
