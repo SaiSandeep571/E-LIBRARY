@@ -42,7 +42,7 @@ class Book extends StatelessWidget {
                         height: 32,
                         width: 192,
                         decoration: BoxDecoration(
-                          color: Color(0xFF1E1E1E),
+                          color: Colors.grey,
                           borderRadius: BorderRadius.circular(5)
                         ),
                         child: TextFormField( 
@@ -54,9 +54,9 @@ class Book extends StatelessWidget {
                           decoration: InputDecoration(
                             hintText: 'Search Book',
                             hintStyle: GoogleFonts.poppins(
-                              color:Color.fromRGBO(255, 255, 255, 0.33),
+                              color: const Color.fromARGB(255, 43, 42, 42),
                               fontSize: 12,
-                              fontWeight: FontWeight.w400         
+                              fontWeight: FontWeight.w500         
                             ),
                             prefixIcon: Icon(Icons.search_rounded),
                             border: InputBorder.none

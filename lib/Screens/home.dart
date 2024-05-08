@@ -1,7 +1,5 @@
 import 'package:e_library/Screens/department.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatelessWidget {
@@ -16,8 +14,21 @@ class Home extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
-          leading: Icon(Icons.menu_outlined),
-          actions: [Icon(Icons.notifications)],
+          title: Container(
+            alignment: Alignment.center,
+            child: Text('E-LIBRARY',
+                     style: GoogleFonts.poppins(
+                                    fontWeight:FontWeight.w500,
+                                    fontSize:24,                   
+                                  ),
+                    
+                    ),
+          ),
+          leading: Icon(Icons.menu_outlined,),
+          actions: [Padding(
+            padding: const EdgeInsets.all(15),
+            child: Icon(Icons.notifications),
+          )],
         ),
 
         body: 
@@ -38,8 +49,11 @@ class Home extends StatelessWidget {
                   height: 50,
                   width: 400,
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8)
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [BoxShadow(color: Colors.white.withOpacity(.8),blurRadius: 0.3,spreadRadius: 0.2,offset:Offset(2, 1.5))]
+                    
+
                   ),
                   child: Text('EXPLORE BOOKS',
                   style: GoogleFonts.poppins(
@@ -49,6 +63,8 @@ class Home extends StatelessWidget {
                   ),
                 ),
               ),
+
+              SizedBox(height: 8),
           
               Divider(
                 color: Colors.white,
@@ -63,8 +79,10 @@ class Home extends StatelessWidget {
                 color: Colors.white,
               ),
               ),
+
+              SizedBox(height: 8),
               
-              SizedBox(height: 10),
+              
 
 
               Expanded(
@@ -74,12 +92,7 @@ class Home extends StatelessWidget {
                       children: [
                        _detailbox('assets/shab.png','FLUTTER','SAB','10/01/2003','17/01/2003'),
                        _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
-                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
-                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
-                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
-                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
-                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
-                       _detailbox('assets/leo.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
+
                       ],
                     ),
                   ],
