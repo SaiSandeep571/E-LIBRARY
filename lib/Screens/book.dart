@@ -79,8 +79,8 @@ class Book extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                         _bookdetail(context,'assets/leo.png','123','EGANA THINNAM','CHRISTY LEO','TEXTBOOK','2','YES'),
-                         _bookdetail(context,'assets/leo.png','234','EGANA THINNAM','CHRISTY LEO','TEXTBOOK','3','YES'),
+                         _bookdetail(context,'assets/os.png','123','EGANA THINNAM','CHRISTY LEO','TEXTBOOK','2','YES'),
+                         _bookdetail(context,'assets/os.png','234','EGANA THINNAM','CHRISTY LEO','TEXTBOOK','3','YES'),
                         ],
                       ),
                       
