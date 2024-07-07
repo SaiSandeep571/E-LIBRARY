@@ -90,8 +90,8 @@ class Home extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                       _detailbox('assets/c.png','FLUTTER','SAB','10/01/2003','17/01/2003'),
-                       _detailbox('assets/os.png','EGANA THINNAM','CHRISTY LEO','09/09/2009','19/09/2009'),
+                       _detailbox('assets/c.png','C PROGRAMMING','Aamer Khan','10/01/2003','17/01/2003'),
+                       _detailbox('assets/os.png','OPERATING SYSTEM','Silberschatz Abraham','09/09/2009','19/09/2009'),
 
                       ],
                     ),

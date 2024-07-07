@@ -11,98 +11,100 @@ class Department extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.black,
 
-        body: Container(
-          margin: EdgeInsets.all(15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-
-
-              InkWell(
-                onTap: () {
-                   Navigator.pop(context);
-                },
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 30,
-                  width: 30,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                       color: Colors.white,),
-                  child: Icon(
-                    Icons.arrow_back_ios_new_rounded,
+        body: SingleChildScrollView(
+          child: Container(
+            margin: EdgeInsets.all(15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+          
+          
+                InkWell(
+                  onTap: () {
+                     Navigator.pop(context);
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 30,
+                    width: 30,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                         color: Colors.white,),
+                    child: Icon(
+                      Icons.arrow_back_ios_new_rounded,
+                    ),
                   ),
                 ),
-              ),
-
-            SizedBox(height: 10),
-
-              Text('DEPARTMENT :',
-               style: GoogleFonts.poppins(
-                          fontWeight:FontWeight.w700,
-                          fontSize:20,  
-                          color: Colors.white,                 
-                        ),
-                        ),
-
-                        SizedBox(height: 10),
-              
-
-              Row(
-                //mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _options(context,'COMPUTER SCIENCE ENGINEERING'),
-                  _options(context,'MECHANICAL ENGINEERING'),
-                ],
-              ),
-
-               Row(
-                //mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _options(context,'CIVIL ENGINEERING'),
-                  _options(context,'ELECTRICAL & ELECTRONICS ENGINEERING'),
-                ],
-              ),
-
-              Row(
-                //mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _options(context,'ELECTRONICS & COMMUNICATION ENGINEERING'),
-                ],
-              ),
-
+          
               SizedBox(height: 10),
-
-              Text('OTHERS :',
-               style: GoogleFonts.poppins(
-                          fontWeight:FontWeight.w700,
-                          fontSize:20,  
-                          color: Colors.white,                 
-                        ),
-                        ),
-
-                        SizedBox(height: 10),
-              
-
-              Row(
-                //mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _options(context,'FICTION'),
-                  _options(context,'NON-FICTION'),
-                ],
-              ),
-
-               Row(
-               // mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _options(context,'NOVELS'),
-                  _options(context,'REFERENCE WORKS'),
-                ],
-              ),
-
-              
-              
-            ],
+          
+                Text('DEPARTMENT :',
+                 style: GoogleFonts.poppins(
+                            fontWeight:FontWeight.w700,
+                            fontSize:20,  
+                            color: Colors.white,                 
+                          ),
+                          ),
+          
+                          SizedBox(height: 10),
+                
+          
+                Row(
+                  //mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _options(context,'COMPUTER SCIENCE ENGINEERING'),
+                    _options(context,'MECHANICAL ENGINEERING'),
+                  ],
+                ),
+          
+                 Row(
+                  //mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _options(context,'CIVIL ENGINEERING'),
+                    _options(context,'ELECTRICAL & ELECTRONICS ENGINEERING'),
+                  ],
+                ),
+          
+                Row(
+                  //mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _options(context,'ELECTRONICS & COMMUNICATION ENGINEERING'),
+                  ],
+                ),
+          
+                SizedBox(height: 10),
+          
+                Text('OTHERS :',
+                 style: GoogleFonts.poppins(
+                            fontWeight:FontWeight.w700,
+                            fontSize:20,  
+                            color: Colors.white,                 
+                          ),
+                          ),
+          
+                          SizedBox(height: 10),
+                
+          
+                Row(
+                  //mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _options(context,'FICTION'),
+                    _options(context,'NON-FICTION'),
+                  ],
+                ),
+          
+                 Row(
+                 // mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _options(context,'NOVELS'),
+                    _options(context,'REFERENCE WORKS'),
+                  ],
+                ),
+          
+                
+                
+              ],
+            ),
           ),
         ),
       ),
