@@ -15,7 +15,7 @@ void main() async {
   );
   SharedPreferences pref = await SharedPreferences.getInstance();
   email = pref.getString("EMAIL").toString();
-  log = pref.getString("LOG");
+  log = pref.getString("LOGIN");
 
   runApp(const MainApp());
 }

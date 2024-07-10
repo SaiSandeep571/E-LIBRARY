@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:e_library/Screens/chat/ChatScreen.dart';
 import 'package:e_library/Screens/controller.dart';
 import 'package:e_library/Screens/department.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +15,13 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        floatingActionButton: CircleAvatar(
-          child: IconButton(onPressed: null, icon: Icon(Icons.abc)),
+        floatingActionButton: InkWell(
+          onTap: () {
+            Get.to(() => ChatScreen(), transition: Transition.rightToLeft);
+          },
+          child: CircleAvatar(
+            child: IconButton(onPressed: null, icon: Icon(Icons.abc)),
+          ),
         ),
         backgroundColor: Colors.black,
         appBar: AppBar(
@@ -31,7 +37,6 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-
         ),
         body: GetBuilder<homeController>(builder: (_) {
           return Container(
