@@ -9,7 +9,7 @@ import 'package:get/route_manager.dart';
 import 'package:http/http.dart';
 
 class chatcontroller extends GetxController {
-  String apiKey = "sk-proj-obWAD5H6xCUuWPOjqcItT3BlbkFJeFRFej3AlXrvfKU5zVLS";
+  String apiKey = "sk-proj-sUvN93NpFTmoD2N3uN0yT3BlbkFJsqFQyH2fxdEjTQ2YuHm3";
   TextEditingController inputController = TextEditingController();
 
   List<Widget> Messages = [];

@@ -19,6 +19,11 @@ class Loginscreen extends StatelessWidget {
       SharedPreferences pref = await SharedPreferences.getInstance();
       pref.setString("EMAIL", email);
       pref.setString("LOGIN", "IN");
+      if (email == "admin@gmail.com") {
+        pref.setString("USR_TYPE", "IN");
+      } else {
+        pref.setString("USR_TYPE", "OUT");
+      }
       Fluttertoast.showToast(msg: "Login successfully");
       Get.offAll(() => Home(), transition: Transition.rightToLeft);
     } on FirebaseAuthException catch (e) {
