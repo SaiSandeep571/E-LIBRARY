@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crypto/crypto.dart';
 import 'package:e_library/Screens/bookOverViewPage.dart';
+import 'package:e_library/utils/textLabel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,7 +28,8 @@ int stringTo5DigitId(String input) {
   return id % 100000;
 }
 
-bookdetail(BuildContext context, QueryDocumentSnapshot model) {
+bookdetail(BuildContext context, QueryDocumentSnapshot model,
+    {bool isadmin = false}) {
   return InkWell(
     onTap: () {
       //_dialogbox(context, image, text1, text2, text3, text4, text5, text6);
@@ -38,7 +40,7 @@ bookdetail(BuildContext context, QueryDocumentSnapshot model) {
     child: Container(
       margin: EdgeInsets.all(8),
       padding: EdgeInsets.all(10),
-      height: 230,
+      height: (isadmin) ? 270 : 230,
       width: 160,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -165,6 +167,26 @@ bookdetail(BuildContext context, QueryDocumentSnapshot model) {
               )
             ],
           ),
+          SizedBox(
+            height: 10,
+          ),
+          if (isadmin)
+            InkWell(
+              onTap: () {
+                // FirebaseFirestore db = FirebaseFirestore.instance;
+                // db.collection("")
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: double.infinity,
+                height: 30,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.amber),
+                child: appText("DELETE BOOk",
+                    size: 10, fontWeight: FontWeight.w700),
+              ),
+            ),
         ],
       ),
     ),

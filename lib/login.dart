@@ -1,3 +1,4 @@
+import 'package:e_library/Screens/AdminHome.dart';
 import 'package:e_library/Screens/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -21,11 +22,13 @@ class Loginscreen extends StatelessWidget {
       pref.setString("LOGIN", "IN");
       if (email == "admin@gmail.com") {
         pref.setString("USR_TYPE", "IN");
+        Fluttertoast.showToast(msg: "Login successfully");
+        Get.offAll(() => AdminHome(), transition: Transition.rightToLeft);
       } else {
+        Fluttertoast.showToast(msg: "Login successfully");
+        Get.offAll(() => Home(), transition: Transition.rightToLeft);
         pref.setString("USR_TYPE", "OUT");
       }
-      Fluttertoast.showToast(msg: "Login successfully");
-      Get.offAll(() => Home(), transition: Transition.rightToLeft);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         Fluttertoast.showToast(msg: 'No user found for that email.');

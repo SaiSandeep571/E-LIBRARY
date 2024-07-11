@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crypto/crypto.dart';
 import 'package:e_library/Screens/AddBookScreen.dart';
+import 'package:e_library/Screens/adminBooklist.dart';
+import 'package:e_library/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -73,6 +75,16 @@ class _AdminHomeState extends State<AdminHome> {
             ),
           ),
         ),
+        actions: [
+          InkWell(
+              onTap: () {
+                Get.off(() => Loginscreen());
+              },
+              child: Icon(Icons.logout)),
+          SizedBox(
+            width: 10,
+          )
+        ],
       ),
       floatingActionButton: InkWell(
         onTap: () {
@@ -85,6 +97,38 @@ class _AdminHomeState extends State<AdminHome> {
       body: SafeArea(
           child: Column(
         children: [
+          InkWell(
+            onTap: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => Department()),
+              // );
+              Get.to(() => adminBookList(), transition: Transition.rightToLeft);
+            },
+            child: Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.all(5),
+              height: 50,
+              width: 400,
+              decoration: BoxDecoration(
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.white.withOpacity(.8),
+                        blurRadius: 0.3,
+                        spreadRadius: 0.2,
+                        offset: Offset(2, 1.5))
+                  ]),
+              child: Text(
+                'VIEW BOOKS',
+                style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+          ),
           Expanded(
               child: SingleChildScrollView(
             child: Column(
